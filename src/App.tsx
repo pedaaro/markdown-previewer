@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import ReactMarkdown from "react-markdown"
-// import breaks from 'remark-breaks';
+import { Components } from 'react-markdown'
+
+type MarkdownComponents = Partial<Components>
 
 const defaultMarkdown = `
 # Welcome to my React Markdown Previewer!
@@ -48,7 +50,7 @@ function App() {
       <div className="boxes-container">
         <textarea name="editor" id="editor" value={markdownText} onChange={(e) => setMarkdownText(e.target.value)}></textarea>
         <div id="preview">
-          <ReactMarkdown components={undefined}>{markdownText}</ReactMarkdown>
+          <ReactMarkdown components={{}}>{markdownText}</ReactMarkdown>
         </div>
       </div>
     </div>
