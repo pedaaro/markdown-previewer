@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import ReactMarkdown from "react-markdown"
+import breaks from 'remark-breaks';
 
-// defaultMarkdown contains valid markdown that represents at least one of each of the following elements: a header (H1 size), a sub header (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text
 const defaultMarkdown = `
 # Welcome to my React Markdown Previewer!
 
@@ -48,7 +48,7 @@ function App() {
       <div className="boxes-container">
         <textarea name="editor" id="editor" value={markdownText} onChange={(e) => setMarkdownText(e.target.value)}></textarea>
         <div id="preview">
-          <ReactMarkdown>{markdownText}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[breaks]}>{markdownText}</ReactMarkdown>
         </div>
       </div>
     </div>
