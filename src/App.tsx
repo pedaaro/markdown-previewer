@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import ReactMarkdown from "react-markdown"
-import { Components } from 'react-markdown'
+// import { Components } from 'react-markdown'
 
-type MarkdownComponents = Partial<Components>
+// type MarkdownComponents = Partial<Components>
 
 const defaultMarkdown = `
 # Welcome to my React Markdown Previewer!
